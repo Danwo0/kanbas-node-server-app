@@ -114,9 +114,14 @@ const assignment = {
     });
     app.put("/a5/todos/:id", (req, res) => {
       const { id } = req.params;
-      const todo = todos.find((t) => t.id === parseInt(id));
-      todo.title = req.body.title;
-      todo.description = req.body.description;
+      const todo = todos.find((t) => t.id === parseInt(id))
+      
+      if (!todo) {
+        res.sendStatus(404);
+      }
+      
+      todo.title = req.body.title ?? "placeholder title";
+      todo.description = req.body.description ?? "placeholder description";
       todo.due = req.body.due;
       todo.completed = req.body.completed;
       res.sendStatus(200);
