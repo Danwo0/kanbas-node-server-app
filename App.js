@@ -2,10 +2,10 @@ import express from "express";
 import session from "express-session";
 import "dotenv/config";
 import { mongoose } from "mongoose";
-import CourseRoutes from "./Kanbas/Courses/routes.js";
 import Hello from "./Hello.js";
 import Lab5 from "./Lab5.js";
 import cors from "cors";
+import CourseRoutes from "./Kanbas/Courses/routes.js";
 import ModuleRoutes from "./Kanbas/modules/routes.js";
 import UserRoutes from "./Kanbas/Users/routes.js";
 
