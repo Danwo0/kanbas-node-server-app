@@ -22,7 +22,7 @@ const handle_origin = (requestOrigin, callback) => {
   if (!requestOrigin || allowedOrigins.includes(requestOrigin)) {
     return callback(null, true);
   } else {
-    const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
+    const msg = `The CORS policy for this site does not allow access from the specified Origin: ${requestOrigin}`;
     return callback(new Error(msg), false);
   }
 }
