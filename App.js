@@ -28,7 +28,7 @@ const handle_origin = (requestOrigin, callback) => {
   }
 }
 
-const HTTP_SERVER_DOMAIN_BASE = process.env.HTTP_SERVER_DOMAIN;
+const HTTP_SERVER_DOMAIN = process.env.HTTP_SERVER_DOMAIN;
 
 const app = express();
 app.use(
@@ -47,6 +47,7 @@ if (process.env.NODE_ENV !== "development") {
   sessionOptions.cookie = {
     sameSite: "none",
     secure: true,
+    domain: HTTP_SERVER_DOMAIN
   };
 }
 
